@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sfdnew">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".studentFinalDashboard"></activity>
+        <activity android:name=".studentDashboard3" />
+        <activity android:name=".studentDashboard2" />
+        <activity android:name=".professorViewPraticals" />
+        <activity android:name=".viewPraticals" />
+        <activity android:name=".postPraticals" />
+        <activity android:name=".viewNotes" />
+        <activity android:name=".professorViewNotes" />
+        <activity android:name=".postNotes" />
+        <activity android:name=".professorViewAssignment" />
+        <activity android:name=".viewAssignment" />
+        <activity android:name=".postAssignment" />
+        <activity android:name=".professorViewNotice" />
+        <activity android:name=".aboutUs" />
+        <activity android:name=".userSignIn" />
+        <activity android:name=".userSignUp" />
+        <activity android:name=".professorDashboard" />
+        <activity android:name=".professorSignIn" />
+        <activity android:name=".professorSignUp" />
+        <activity android:name=".viewNotices" />
+        <activity android:name=".postNotice" />
+        <activity android:name=".loginAs" />
+        <activity android:name=".studentprofile" />
+        <activity android:name=".studentsignin" />
+        <activity android:name=".studentDashboard1" />
+        <activity android:name=".studentsignup" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

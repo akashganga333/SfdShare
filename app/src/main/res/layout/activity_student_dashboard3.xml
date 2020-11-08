@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".professorDashboard">
+
+    <Button
+
+        android:id="@+id/logoutd3"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="70dp"
+        android:textSize="10sp"
+        android:onClick="logout"
+        android:background="@drawable/logout_5png"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/textGrid"
+                android:layout_width="126dp"
+                android:layout_height="63dp"
+                android:layout_centerInParent="true"
+                android:text="Year"
+                android:fontFamily="@font/bungee"
+                android:textColor="@android:color/white"
+                android:textSize="34sp" />
+
+
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:id="@+id/mainGrid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:padding="14dp"
+            android:rowCount="3">
+
+            <!-- Row 1 -->
+
+            <!-- Column 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/first"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_height="88dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:src="@drawable/one_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="62dp"
+                        android:text="First Year"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Column 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/second"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="91dp"
+                        android:layout_height="109dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:src="@drawable/second_icon" />
+
+                    <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="31dp"
+                        android:text="Second Year"
+                        android:textAlignment="center"
+
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Row 2 -->
+
+            <!-- Column 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/third"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="101dp"
+                        android:layout_height="92dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:src="@drawable/three_icon" />
+
+                    <TextView
+                        android:layout_width="101dp"
+                        android:layout_height="52dp"
+                        android:text="Third Year"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Column 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fourth"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_height="94dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:src="@drawable/four_icon" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fourth Year"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Row 2 -->
+
+            <!-- Column 1 -->
+
+            <!--            <androidx.cardview.widget.CardView-->
+
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_rowWeight="1"-->
+            <!--                android:layout_columnWeight="1"-->
+            <!--                android:layout_marginLeft="16dp"-->
+            <!--                android:layout_marginRight="16dp"-->
+            <!--                android:layout_marginBottom="16dp"-->
+            <!--                app:cardCornerRadius="50dp"-->
+            <!--                app:cardElevation="8dp"-->
+
+
+            <!--                >-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_gravity="center_horizontal|center_vertical"-->
+            <!--                    android:layout_margin="16dp"-->
+            <!--                    android:orientation="vertical">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="78dp"-->
+            <!--                        android:layout_height="61dp"-->
+            <!--                        android:layout_gravity="center_horizontal"-->
+
+            <!--                        android:src="@drawable/addstudent_icon" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="101dp"-->
+            <!--                        android:layout_height="52dp"-->
+            <!--                        android:text="Circulars"-->
+            <!--                        android:textAlignment="center"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="16sp"-->
+            <!--                        android:textStyle="bold" />-->
+
+            <!--                </LinearLayout>-->
+
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/add_professor"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="0dp"-->
+            <!--                android:layout_rowWeight="1"-->
+            <!--                android:layout_columnWeight="1"-->
+            <!--                android:layout_marginLeft="16dp"-->
+            <!--                android:layout_marginRight="16dp"-->
+            <!--                android:layout_marginBottom="16dp"-->
+            <!--                app:cardCornerRadius="50dp"-->
+            <!--                app:cardElevation="8dp"-->
+
+
+            <!--                >-->
+
+            <!--                <LinearLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_gravity="center_horizontal|center_vertical"-->
+            <!--                    android:layout_margin="16dp"-->
+            <!--                    android:orientation="vertical">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="78dp"-->
+            <!--                        android:layout_height="61dp"-->
+            <!--                        android:layout_gravity="center_horizontal"-->
+
+            <!--                        android:src="@drawable/addstudent_icon" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="101dp"-->
+            <!--                        android:layout_height="52dp"-->
+            <!--                        android:text="Log Out"-->
+            <!--                        android:textAlignment="center"-->
+            <!--                        android:textColor="@android:color/black"-->
+            <!--                        android:textSize="16sp"-->
+            <!--                        android:textStyle="bold" />-->
+
+            <!--                </LinearLayout>-->
+
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!-- Column 2 -->
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
