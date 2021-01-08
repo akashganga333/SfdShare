@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".studentFinalDashboard"></activity>
+        <activity android:name=".viewStudentSubmit"></activity>
+        <activity android:name=".studentAssignmentUpload" />
+        <activity android:name=".studentFinalDashboard" />
         <activity android:name=".studentDashboard3" />
         <activity android:name=".studentDashboard2" />
         <activity android:name=".professorViewPraticals" />

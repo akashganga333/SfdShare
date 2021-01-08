@@ -1,8 +1,10 @@
 package com.example.sfdnew;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -15,12 +17,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,6 +92,25 @@ public class viewAssignment extends AppCompatActivity {
                     }
                 };
                 assigListView.setAdapter(adapter);
+
+                assigListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        new AlertDialog.Builder(viewAssignment.this)
+                                .setTitle("Upload Assignment")
+                                .setMessage("Do you want to upload the assignment?")
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        startActivity(new Intent(getApplicationContext(),studentAssignmentUpload.class));
+
+                                    }
+                                })
+                                .setNegativeButton("NO",null)
+                                .show();
+                        return true;
+                    }
+                });
 
 
 

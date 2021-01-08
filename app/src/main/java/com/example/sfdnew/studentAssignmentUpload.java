@@ -26,7 +26,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-public class postAssignment extends AppCompatActivity {
+public class studentAssignmentUpload extends AppCompatActivity {
     EditText editAssignmentName;
     Button btn_aup;
 
@@ -35,13 +35,13 @@ public class postAssignment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_assignment);
+        setContentView(R.layout.activity_student_assignment_upload);
 
-        editAssignmentName=(EditText)findViewById(R.id.assignmentnameupload);
-        btn_aup=findViewById(R.id.uploadAssignment_btn);
+        editAssignmentName=(EditText)findViewById(R.id.studentAssign);
+        btn_aup=findViewById(R.id.btn_submitAssignment);
 
         storageReference= FirebaseStorage.getInstance().getReference();
-        databaseReference= FirebaseDatabase.getInstance().getReference("Assignment");
+        databaseReference= FirebaseDatabase.getInstance().getReference("Submissions");
 
         btn_aup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +57,7 @@ public class postAssignment extends AppCompatActivity {
         //intent.setType("image/*||application/*");
         intent.setType(mimeTypes.length==1?mimeTypes[0]:"*/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Assignment File"),1);
+        startActivityForResult(Intent.createChooser(intent,"Select File"),1);
 
     }
 
@@ -73,10 +73,10 @@ public class postAssignment extends AppCompatActivity {
     private void uploadassignment(Uri data) {
 
         final ProgressDialog progressDialog=new ProgressDialog(this);
-        progressDialog.setTitle("Uploading Assignment......");
+        progressDialog.setTitle("Submitting Assignment......");
         progressDialog.show();
 
-        StorageReference reference=storageReference.child("Assignment/"+System.currentTimeMillis());
+        StorageReference reference=storageReference.child("Submission/"+System.currentTimeMillis());
         reference.putFile(data)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -85,9 +85,9 @@ public class postAssignment extends AppCompatActivity {
                         while(!uri.isComplete());
                         Uri url=uri.getResult();
 
-                        uploadAssignment uploadAssignment=new uploadAssignment(editAssignmentName.getText().toString(),url.toString());
-                        databaseReference.child(databaseReference.push().getKey()).setValue(uploadAssignment);
-                        Toast.makeText(postAssignment.this,"Assignment Uploaded",Toast.LENGTH_SHORT ).show();
+                        submitAssignment submitAssignment=new submitAssignment(editAssignmentName.getText().toString(),url.toString());
+                        databaseReference.child(databaseReference.push().getKey()).setValue(submitAssignment);
+                        Toast.makeText(studentAssignmentUpload.this,"Assignment Submitted",Toast.LENGTH_SHORT ).show();
                         progressDialog.dismiss();
                     }
                 }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
@@ -99,31 +99,13 @@ public class postAssignment extends AppCompatActivity {
 
             }
         });
-        notification();
-    }
 
-    private void notification(){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            NotificationChannel channel=new NotificationChannel("n","n", NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager manager=getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-
-        }
-        NotificationCompat.Builder builder=new NotificationCompat.Builder(this,"n")
-                .setContentText("Assignment")
-                .setSmallIcon(R.drawable.assignment_icon)
-                .setAutoCancel(true)
-                .setContentText("New Assignment on SFD");
-        NotificationManagerCompat managerCompat=NotificationManagerCompat.from(this);
-        managerCompat.notify(999,builder.build());
     }
 
 
-    public void btn_actionassig(View view) {
-        startActivity(new Intent(getApplicationContext(),professorViewAssignment.class));
-    }
 
-    public void viewSubmitp(View view) {
+
+    public void viewSubmit(View view) {
         startActivity(new Intent(getApplicationContext(),viewStudentSubmit.class));
     }
 }
